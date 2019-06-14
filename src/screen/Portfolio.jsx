@@ -2,9 +2,10 @@ import React, { useReducer } from "react";
 import styled from "styled-components";
 import { portfolioReducer } from "../hooks/portfolioReducer";
 import { portfolioData } from "../data/initialPortfolio";
-import { HoverTriangle } from "./HoverTriangle";
+import { HoverTriangle } from "../components/HoverTriangle";
 import Turning from "../hoc/Turning";
 import { GlobalStyles } from "../styles/global";
+import Footer from "../components/Footer";
 
 const PortfolioContainer = styled.div`
   display: flex;
@@ -15,6 +16,8 @@ const PortfolioContainer = styled.div`
 `;
 
 const Bg = styled.div`
+  position: relative;
+  overflow: hidden;
   text-align: center;
   background-color: ${GlobalStyles.color.background};
   display: flex;
@@ -23,9 +26,29 @@ const Bg = styled.div`
   align-items: center;
 `;
 
-const Textbox = styled.div`
+const Titlebox = styled.div`
   position: absolute;
-  transform: translateX(550px);
+  right: 5vw;
+  color: ${GlobalStyles.color.colorPalette.sec};
+  padding: 5rem;
+  background-color: ${GlobalStyles.color.colorPalette.quint};
+  border: solid 5px ${GlobalStyles.color.colorPalette.prim};
+  max-width: 350px;
+  bottom: 100px;
+`;
+
+const Contentbox = styled.div`
+  position: absolute;
+  left: 10vw;
+  color: ${GlobalStyles.color.colorPalette.sec};
+  padding: 1rem;
+  background-color: ${GlobalStyles.color.colorPalette.quint};
+  border: solid 5px ${GlobalStyles.color.colorPalette.prim};
+  max-width: 350px;
+  top: 50px;
+  font-size: 19px;
+  hyphens: auto;
+  line-height: 1.3em;
 `;
 
 const BackgroundReckRight = styled.div`
@@ -70,7 +93,10 @@ export const Portfolio = () => {
           createTriangles(category, dispatch)
         }
       </PortfolioContainer>
-      <Textbox>{(state.active) ? category[state.active - 1].title : ""}</Textbox>
+      <Titlebox>{(state.active) ? category[state.active - 1].title : ""}</Titlebox>
+      <Contentbox>{(state.active) ? category[state.active - 1].content : ""}</Contentbox>
+      <Footer />
     </Bg>
+
   );
 };
