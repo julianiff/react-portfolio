@@ -4,16 +4,13 @@ export const GlobalStyles = {
   },
   color: {
     colorPalette: {
-      prim: "#FFFFFF",
-      sec: "#65FBD2",
-      ter: "#05C19C",
-      quart: "#008B69"
+      prim: "#E0E0E0",
+      sec: "#C2C5CA",
+      ter: "#A0ABB4",
+      quart: "#7D949A",
+      quint: "#5C7C7C"
     },
-    background: "#303030",
-    prim: "#FFFFFF",
-    sec: "#65FBD2",
-    ter: "#05C19C",
-    quart: "#008B69",
+    background: "#43655A",
     hover: {
       prim: "black"
     }
