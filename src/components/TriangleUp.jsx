@@ -8,14 +8,15 @@ const Up = styled.div`
   border-left: ${props => props.ratio}px solid transparent;
   border-right: ${props => props.ratio}px solid transparent;
   
-  border-bottom: ${props => props.ratio}px solid black;
+  border-bottom: ${props => props.ratio}px solid ${props => props.color};
 `;
 
-const TriangleUp = ({ratio = 5}) => {
+const TriangleUp = ({ratio = 5, color = 'black'}) => {
 
   return (
     <Up
     ratio={ratio}
+    color={color}
     />
   );
 };

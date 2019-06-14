@@ -5,6 +5,7 @@ import { portfolioData } from "../data/initialPortfolio";
 import HoveringCard from "./HoveringCard";
 import TriangleUp from "./TriangleUp";
 import Hovering from "../hoc/Hovering";
+import { GlobalStyles } from "../styles/global";
 
 const PortfolioContainer = styled.div`
   display: flex;
@@ -27,9 +28,8 @@ export const Portfolio = () => {
   return (
     <PortfolioContainer>
       <Hovering>
-        <TriangleUp ratio={250}/>
+        <TriangleUp ratio={250} color={GlobalStyles.color.prim}/>
       </Hovering>
-      {createShards()}
     </PortfolioContainer>
   );
 };
