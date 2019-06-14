@@ -2,7 +2,9 @@ import React, { useReducer } from "react";
 import styled from "styled-components";
 import { portfolioReducer } from "../hooks/portfolioReducer";
 import { portfolioData } from "../data/initialPortfolio";
-import Shard from "./Shard";
+import HoveringCard from "./HoveringCard";
+import TriangleUp from "./TriangleUp";
+import Hovering from "../hoc/Hovering";
 
 const PortfolioContainer = styled.div`
   display: flex;
@@ -19,11 +21,14 @@ export const Portfolio = () => {
 
   const createShards = () => {
     const { category } = state;
-    return category.map(item => <Shard key={item.title} content={item.title}/>);
+    return category.map(item => <HoveringCard key={item.title}>{item.title}</HoveringCard>);
   };
 
   return (
     <PortfolioContainer>
+      <Hovering>
+        <TriangleUp ratio={250}/>
+      </Hovering>
       {createShards()}
     </PortfolioContainer>
   );
