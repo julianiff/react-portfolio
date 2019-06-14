@@ -24,7 +24,26 @@ const Bg = styled.div`
 `;
 
 const Textbox = styled.div`
-  background-color: blue;
+  position: absolute;
+  transform: translateX(550px);
+`;
+
+const BackgroundReckRight = styled.div`
+  width: 550px;
+  height: 550px;
+  position: absolute;
+  border: 10px solid ${GlobalStyles.color.colorPalette.sec};
+  transform: translateX(${props => (props.active) ? "250px" : ""});
+  transition: transform 250ms ease-in;
+`;
+
+const BackgroundReckLeft = styled.div`
+  width: 550px;
+  height: 550px;
+  position: absolute;
+  border: 10px solid ${GlobalStyles.color.colorPalette.quint};    
+  transform: translateX(-350px) translateY(-150px);
+  transition: transaform 250ms ease-in;
 `;
 
 
@@ -43,11 +62,15 @@ export const Portfolio = () => {
   return (
     <Bg>
       <PortfolioContainer>
+        <BackgroundReckRight
+          active={state.active}
+        />
+        <BackgroundReckLeft/>
         {
           createTriangles(category, dispatch)
         }
       </PortfolioContainer>
-      <Textbox>{category[state.active].title}</Textbox>
+      <Textbox>{(state.active) ? category[state.active - 1].title : ""}</Textbox>
     </Bg>
   );
 };
