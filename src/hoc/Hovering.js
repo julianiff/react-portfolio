@@ -1,5 +1,12 @@
 import React from "react";
-import { useSpring, animated } from "react-spring";
+import { animated, useSpring } from "react-spring";
+import styled from "styled-components";
+
+const ZIndexHover = styled(animated.div)`
+  &:hover {
+    z-index: 100;
+  }
+`;
 
 const Hovering = entry => {
   const [props, set] = useSpring(() => ({
@@ -10,7 +17,7 @@ const Hovering = entry => {
   const calc = (x, y) => [
     -(y - window.innerHeight / 2) / 20,
     (x - window.innerWidth / 2) / 20,
-    1.1
+    0.9
   ];
 
   const trans = (x, y, s) =>
@@ -18,13 +25,13 @@ const Hovering = entry => {
 
   return (
     <>
-      <animated.div
+      <ZIndexHover
         onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
         style={{ transform: props.xys.interpolate(trans) }}
       >
         {entry.children}
-      </animated.div>
+      </ZIndexHover>
     </>
   );
 };

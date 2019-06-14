@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { portfolioReducer } from "../hooks/portfolioReducer";
 import { portfolioData } from "../data/initialPortfolio";
 import HoveringCard from "./HoveringCard";
-import TriangleUp from "./TriangleUp";
+import { Triangle, TriangleDown, TriangleUp } from "./Triangle";
 import Hovering from "../hoc/Hovering";
 import { GlobalStyles } from "../styles/global";
 
@@ -25,10 +25,34 @@ export const Portfolio = () => {
     return category.map(item => <HoveringCard key={item.title}>{item.title}</HoveringCard>);
   };
 
+  const createCategories = () => {
+    const { category } = state;
+
+
+    return category.map((item, index) => {
+
+
+      console.log(item);
+    });
+
+  };
+
+
+  const ratio = 250;
+
   return (
     <PortfolioContainer>
       <Hovering>
-        <TriangleUp ratio={250} color={GlobalStyles.color.prim}/>
+        <TriangleDown ratio={ratio} color={GlobalStyles.color.prim}/>
+      </Hovering>
+      <Hovering>
+        <TriangleUp ratio={ratio} color={GlobalStyles.color.sec}/>
+      </Hovering>
+      <Hovering>
+        <TriangleDown ratio={ratio} color={GlobalStyles.color.ter}/>
+      </Hovering>
+      <Hovering>
+        <TriangleUp ratio={ratio} color={GlobalStyles.color.quart}/>
       </Hovering>
     </PortfolioContainer>
   );

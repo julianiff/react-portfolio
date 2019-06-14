@@ -1,13 +1,19 @@
 import React from "react";
 import "./App.css";
-import { Header } from "./components/Header.jsx";
 import { Portfolio } from "./components/Portfolio";
+import styled from "styled-components";
+import { GlobalStyles } from "./styles/global";
+
+const Bg = styled.div`
+  text-align: center;
+  background-color: ${GlobalStyles.color.background};
+`;
 
 function App() {
   return (
-    <div className="App">
+    <Bg>
       <Portfolio />
-    </div>
+    </Bg>
   );
 }
 

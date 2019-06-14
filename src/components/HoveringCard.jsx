@@ -12,9 +12,6 @@ const Edge = styled.div`
   margin-bottom: 50px;
   will-change: transform;
   width: 250px;
-  &:hover {
-    box-shadow: 0 30px 100px -10px rgba(0, 0, 0, 0.4);
-  }
 `;
 
 

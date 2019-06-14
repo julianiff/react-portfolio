@@ -3,8 +3,13 @@ export const GlobalStyles = {
     light: "20px"
   },
   color: {
-    prim: "#845EC2",
-    sec: "#4B4453",
-    ter: "#B0A8B9"
+    background: "#303030",
+    prim: "#FFFFFF",
+    sec: "#65FBD2",
+    ter: "#05C19C",
+    quart: "#008B69",
+    hover: {
+      prim: "black"
+    }
   }
 };
