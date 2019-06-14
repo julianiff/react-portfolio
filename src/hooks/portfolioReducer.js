@@ -1,6 +1,27 @@
+export const SET_ELEMENT_FOCUS = "SET_ELEMENT_FOCUS";
+export const SET_TO_LEFT = "SET_TO_LEFT";
+
+const setFocusElement = (item, state) => {
+  const newState = state.category.filter(entry => entry.id !== item.id);
+  return [item, ...newState].sort((first, second) => first.id - second.id);
+};
+
 const portfolioReducer = (state, action) => {
-  console.log(state, action);
-  return state;
+  switch (action.type) {
+    case SET_ELEMENT_FOCUS:
+      const updatedCategory = setFocusElement(action.dataset, state);
+      return {
+        ...state,
+        category: updatedCategory
+      };
+    case SET_TO_LEFT:
+      return {
+        ...state,
+        position: "flex-start"
+      };
+    default:
+      return state;
+  }
 };
 
 export { portfolioReducer };

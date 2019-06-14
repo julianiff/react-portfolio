@@ -8,13 +8,13 @@ const HoverTriangle = ({ index = 1, ratio = 250 }) => {
 
   const goDown = () => {
     return <Hovering>
-      <TriangleDown ratio={ratio} color={colorPicker(index)}/>
+      <TriangleDown ratio={ratio} color={colorPicker(index)}>children</TriangleDown>
     </Hovering>;
   };
 
   const goUp = () => {
     return <Hovering>
-      <TriangleUp ratio={ratio} color={colorPicker(index)}/>
+      <TriangleUp ratio={ratio} color={colorPicker(index)} />
     </Hovering>;
   };
 

@@ -11,7 +11,7 @@ const ZIndexHover = styled(animated.div)`
 const Hovering = entry => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
-    config: { mass: 5, tension: 500, friction: 115 }
+    config: { mass: 5, tension: 550, friction: 115 }
   }));
 
   const calc = (x, y) => [
