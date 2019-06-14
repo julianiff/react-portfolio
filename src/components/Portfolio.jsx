@@ -16,12 +16,16 @@ export const Portfolio = () => {
   const [state, dispatch] = useReducer(portfolioReducer, portfolioData);
 
   const createTriangles = (data) => {
-    return data.map((item, index) => <HoverTriangle index={index}/>);
+    return data.map((item, index) => <HoverTriangle key={item.title}
+                                                    ratio={document.documentElement.clientHeight / data.length}
+                                                    index={index}/>);
   };
 
   const { category } = state;
   return (
-    <PortfolioContainer>
+    <PortfolioContainer
+      onClick={() => dispatch('number 15')}
+    >
       {
         createTriangles(category)
       }
