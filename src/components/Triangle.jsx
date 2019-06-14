@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { GlobalStyles } from "../styles/global";
 
 
 const Triangle = styled.div`
@@ -30,7 +29,7 @@ const Triangle = styled.div`
 const Up = styled(Triangle)`  
   border-bottom: ${props => props.ratio}px solid ${props => props.color};
   ::after {
-    border-bottom: ${props => props.ratio + 1}px solid ${GlobalStyles.color.hover.prim};
+    border-bottom: ${props => props.ratio + 1}px solid ${props => props.color}57;
     transform: translateX(-${props => props.ratio}px) scale(1.03);
   }
 `;
@@ -38,7 +37,7 @@ const Up = styled(Triangle)`
 const Down = styled(Triangle)`
   border-top: ${props => props.ratio}px solid ${props => props.color};
     ::after {
-      border-top: ${props => props.ratio}px solid ${GlobalStyles.color.hover.prim};
+      border-top: ${props => props.ratio}px solid ${props => props.color}57;
       transform: translateY(-${props => props.ratio}px) translateX(-${props => props.ratio}px) scale(1.03);
     }
 `;

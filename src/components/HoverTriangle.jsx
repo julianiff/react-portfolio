@@ -4,7 +4,7 @@ import React from "react";
 import { colorPicker } from "../styles/colorPicker";
 
 
-const HoverTriangle = ({ index, ratio = 250 }) => {
+const HoverTriangle = ({ index = 1, ratio = 250 }) => {
 
   const goDown = () => {
     return <Hovering>
