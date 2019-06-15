@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { GlobalStyles } from "../styles/global";
 
 
 const DownLeft = styled.div`
@@ -7,7 +8,7 @@ const DownLeft = styled.div`
   left: 0;
   bottom: 0;
   width: 250px;
-  color: white;
+  color: ${GlobalStyles.color.colorPalette.prim};
   font-size: 9px;
 `;
 const Footer = () => {

@@ -6,6 +6,8 @@ import { HoverTriangle } from "../components/HoverTriangle";
 import Turning from "../hoc/Turning";
 import { GlobalStyles } from "../styles/global";
 import Footer from "../components/Footer";
+import DescriptionBox from "../components/DescriptionBox";
+import ImageBox from "../components/ImageBox";
 
 const PortfolioContainer = styled.div`
   display: flex;
@@ -29,26 +31,12 @@ const Bg = styled.div`
 const Titlebox = styled.div`
   position: absolute;
   right: 5vw;
-  color: ${GlobalStyles.color.colorPalette.sec};
+  color: ${GlobalStyles.color.colorPalette.prim};
   padding: 5rem;
   background-color: ${GlobalStyles.color.colorPalette.quint};
   border: solid 5px ${GlobalStyles.color.colorPalette.prim};
   max-width: 350px;
   bottom: 100px;
-`;
-
-const Contentbox = styled.div`
-  position: absolute;
-  left: 10vw;
-  color: ${GlobalStyles.color.colorPalette.sec};
-  padding: 1rem;
-  background-color: ${GlobalStyles.color.colorPalette.quint};
-  border: solid 5px ${GlobalStyles.color.colorPalette.prim};
-  max-width: 350px;
-  top: 50px;
-  font-size: 19px;
-  hyphens: auto;
-  line-height: 1.3em;
 `;
 
 const BackgroundReckRight = styled.div`
@@ -94,7 +82,8 @@ export const Portfolio = () => {
         }
       </PortfolioContainer>
       <Titlebox>{(state.active) ? category[state.active - 1].title : ""}</Titlebox>
-      <Contentbox>{(state.active) ? category[state.active - 1].content : ""}</Contentbox>
+      <ImageBox />
+      <DescriptionBox>{(state.active) ? category[state.active - 1].content : ""}</DescriptionBox>
       <Footer />
     </Bg>
 

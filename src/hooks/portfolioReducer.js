@@ -21,10 +21,13 @@ const portfolioReducer = (state, action) => {
         position: "flex-start"
       };
     case SET_TEXT_BOX:
-      console.log(action);
+      let setActive = false;
+      if (state.active !== action.active) {
+        setActive = action.active;
+      }
       return {
         ...state,
-        active: action.active
+        active: setActive
       };
     default:
       return state;

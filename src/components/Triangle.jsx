@@ -30,7 +30,7 @@ const Up = styled(Triangle)`
   border-bottom: ${props => props.ratio}px solid ${props => props.color};
   ::after {
     border-bottom: ${props => props.ratio}px solid ${props => props.color}57;
-    transform: translateX(-${props => props.ratio}px) scale(1.03);
+    transform: translateX(-${props => props.ratio}px) scale(1.1);
   }
 `;
 
@@ -38,7 +38,7 @@ const Down = styled(Triangle)`
   border-top: ${props => props.ratio}px solid ${props => props.color};
     ::after {
       border-top: ${props => props.ratio}px solid ${props => props.color}57;
-      transform: translateY(-${props => props.ratio}px) translateX(-${props => props.ratio}px) scale(1.03);
+      transform: translateY(-${props => props.ratio}px) translateX(-${props => props.ratio}px) scale(1.1);
     }
 `;
 
