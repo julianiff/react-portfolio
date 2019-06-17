@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import { Portfolio } from "./screen/Portfolio";
+import Presentation from "./screen/Presentation";
 
 function App() {
-  return <Portfolio />;
+  return <Presentation />;
 }
 
 export default App;
