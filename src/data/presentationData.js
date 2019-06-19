@@ -5,23 +5,27 @@
  * @type {{}}
  */
 
-const data = {
+export const presentationData = {
   intro: {
     previous: "intro",
     next: "me",
     content: {
-      template: "1",
-      title: "Hey Digitec",
-      subtitle: "Im Julian"
+      template: "Intro",
+      title: "Hey Guys",
+      subtitle: "its me"
     }
   },
   me: {
-    previous: "generic",
-    next: "",
+    previous: "intro",
+    next: "me",
     content: {
-      template: "2",
+      template: "Intro",
       title: "Thats me",
       img: ""
     }
   }
+};
+
+export const presentationState = {
+  current: "intro"
 };

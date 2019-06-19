@@ -1,11 +1,22 @@
-import React from "react";
-import Intro from "../components/templates/Intro";
+import React, { useReducer } from "react";
+import { presentationData, presentationState } from "../data/presentationData";
+import TemplateWrapper from "../components/templates/TemplateWrapper";
+import { PresentationReducer, SET_CURRENT_ITEM } from "../hooks/PresentationReducer";
 
 
 const Presentation = () => {
 
+  const [state, dispatch] = useReducer(PresentationReducer, presentationState);
+
+  const current = presentationData[state.current];
+  console.log(current);
   return (
-    <Intro foo={12}/>
+    <div
+      onClick={() => dispatch({ type: SET_CURRENT_ITEM, current: current.next })}
+    >
+      <TemplateWrapper
+        {...current} />
+    </div>
   );
 };
 

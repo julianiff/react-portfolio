@@ -1,14 +1,20 @@
 // @flow
 import * as React from "react";
 
-type IntroData = {
-  foo: number
+
+type introTemplate = {
+  previous: String,
+  next: String,
+  content: {
+    title: String,
+    subtitle: String
+  }
 }
 
-const Intro = (props: IntroData) => {
+const Intro = (data: introTemplate) => {
 
   return (
-    <div>{props.foo}</div>
+    <div>{data.content.title}</div>
   );
 };
 
