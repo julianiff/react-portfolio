@@ -11,11 +11,9 @@ const Presentation = () => {
   const current = presentationData[state.current];
 
   return (
-    <div>
-      <TemplateWrapper
-        dispatch={dispatch}
-        {...current} />
-    </div>
+    <TemplateWrapper
+      dispatch={dispatch}
+      {...current} />
   );
 };
 

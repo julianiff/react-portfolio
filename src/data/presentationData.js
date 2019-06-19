@@ -21,7 +21,7 @@ export const presentationData = {
     content: {
       template: "Intro",
       title: "Thats me",
-      img: ""
+      subtitle: "ohh yeeeee"
     }
   },
   you: {
@@ -30,7 +30,7 @@ export const presentationData = {
     content: {
       template: "Intro",
       title: "Thats you, yeah",
-      img: ""
+      subtitle: "Fuck yeee"
     }
   }
 };
