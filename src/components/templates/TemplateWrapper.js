@@ -2,11 +2,13 @@
 
 import React from "react";
 import Intro from "./Intro.jsx";
+import Navigation from "./Navigation";
 
 export type ListObject = {
   previous: String,
   next: String,
-  content: Object
+  content: Object,
+  dispatch: Function
 };
 
 const templates = {
@@ -15,10 +17,9 @@ const templates = {
 
 const TemplateWrapper = (current: ListObject) => {
   const { template } = current.content;
-
   const SpecificTemplate = templates[template];
 
-  return <SpecificTemplate {...current}/>;
+  return <Navigation {...current}><SpecificTemplate {...current}/></Navigation> ;
 };
 
 export default TemplateWrapper;

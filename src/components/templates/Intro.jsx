@@ -3,8 +3,6 @@ import * as React from "react";
 
 
 type introTemplate = {
-  previous: String,
-  next: String,
   content: {
     title: String,
     subtitle: String

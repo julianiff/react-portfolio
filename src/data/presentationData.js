@@ -7,7 +7,7 @@
 
 export const presentationData = {
   intro: {
-    previous: "intro",
+    previous: "you",
     next: "me",
     content: {
       template: "Intro",
@@ -17,10 +17,19 @@ export const presentationData = {
   },
   me: {
     previous: "intro",
-    next: "me",
+    next: "you",
     content: {
       template: "Intro",
       title: "Thats me",
+      img: ""
+    }
+  },
+  you: {
+    previous: "me",
+    next: "intro",
+    content: {
+      template: "Intro",
+      title: "Thats you, yeah",
       img: ""
     }
   }
