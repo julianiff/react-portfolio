@@ -16,18 +16,18 @@ const RightNavigation = styled.div`
   position: absolute;
   right: 15px;
   top: 50%;
-  width: 15px;
-  height: 15px;
-  background-color: green;
+  font-size: 45px;
+  line-height: 1.5em;
+  cursor: pointer;
 `;
 
 const LeftNavigation = styled.div`
   position: absolute;
   left: 15px;
   top: 50%;
-  width: 15px;
-  height: 15px;
-  background-color: green;
+  font-size: 45px;
+  line-height: 1.5em;
+  cursor: pointer;
 `;
 
 
@@ -39,11 +39,11 @@ const Navigation = (NavigationElement: NavigationElements) => {
       <RightNavigation
         onClick={() =>
           dispatch(updateEl(next))}
-      />
+      > <nav aria-label="Navigation Next" title="Nächste Folie anzeigen" role='navigation'> > </nav></RightNavigation>
       <LeftNavigation
         onClick={() =>
           dispatch(updateEl(previous))}
-      />
+      > <nav aria-label="Navigation Back" title="Letzte Folie anzeigen" role='navigation'>{"<"}</nav> </LeftNavigation>
 
       {NavigationElement.children}
     </>
@@ -51,7 +51,7 @@ const Navigation = (NavigationElement: NavigationElements) => {
 };
 
 Navigation.defaultProps = {
-  updateEl: updateEntry,
+  updateEl: updateEntry
 };
 
 export default Navigation;
