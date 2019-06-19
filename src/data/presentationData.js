@@ -7,19 +7,19 @@
 
 export const presentationData = {
   intro: {
-    previous: "you",
+    previous: false,
     next: "me",
     content: {
       template: "Intro",
-      title: "Hey Guys",
-      subtitle: "its me"
+      title: "Hey Digitec",
+      subtitle: "My Name is Julian"
     }
   },
   me: {
     previous: "intro",
     next: "you",
     content: {
-      template: "Intro",
+      template: "Portfolio",
       title: "Thats me",
       subtitle: "ohh yeeeee"
     }

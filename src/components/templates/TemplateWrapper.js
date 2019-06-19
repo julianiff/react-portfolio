@@ -3,6 +3,7 @@
 import React from "react";
 import Intro from "./Intro.jsx";
 import Navigation from "./Navigation";
+import { Portfolio } from "../../screen/Portfolio";
 
 export type ListObject = {
   previous: String,
@@ -12,7 +13,8 @@ export type ListObject = {
 };
 
 const templates = {
-  Intro: Intro
+  Intro: Intro,
+  Portfolio: Portfolio
 };
 
 const TemplateWrapper = (current: ListObject) => {

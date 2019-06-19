@@ -19,6 +19,7 @@ const RightNavigation = styled.div`
   font-size: 45px;
   line-height: 1.5em;
   cursor: pointer;
+  z-index: 1500;
 `;
 
 const LeftNavigation = styled.div`
@@ -28,6 +29,7 @@ const LeftNavigation = styled.div`
   font-size: 45px;
   line-height: 1.5em;
   cursor: pointer;
+  z-index: 1500;
 `;
 
 
@@ -40,11 +42,11 @@ const Navigation = (NavigationElement: NavigationElements) => {
         onClick={() =>
           dispatch(updateEl(next))}
       > <nav aria-label="Navigation Next" title="Nächste Folie anzeigen" role='navigation'> > </nav></RightNavigation>
-      <LeftNavigation
-        onClick={() =>
-          dispatch(updateEl(previous))}
-      > <nav aria-label="Navigation Back" title="Letzte Folie anzeigen" role='navigation'>{"<"}</nav> </LeftNavigation>
-
+      {previous ? <LeftNavigation
+          onClick={() =>
+            dispatch(updateEl(previous))}
+        > <nav aria-label="Navigation Back" title="Letzte Folie anzeigen" role='navigation'>{"<"}</nav> </LeftNavigation>
+        : ''}
       {NavigationElement.children}
     </>
   );

@@ -16,14 +16,21 @@ const AllCenter = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 5rem);
+  padding: 2.5rem;
+`;
+
+const Title = styled.div`
+  font-size: 5rem;
+  line-height: 1.5em;
+  font-weight: 500;
 `;
 
 const Intro = (data: introTemplate) => {
 
   return (
     <AllCenter>
-      <div>{data.content.title}</div>
+      <Title>{data.content.title}</Title>
       <div>{data.content.subtitle}</div>
     </AllCenter>
   );
