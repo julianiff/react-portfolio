@@ -1,9 +1,14 @@
-import React from "react";
+// @flow
+import * as React from "react";
 
-const Intro = () => {
+type IntroData = {
+  foo: number
+}
+
+const Intro = (props: IntroData) => {
 
   return (
-    <div>thats the inntro foil</div>
+    <div>{props.foo}</div>
   );
 };
 

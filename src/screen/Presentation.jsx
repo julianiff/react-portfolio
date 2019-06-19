@@ -1,13 +1,12 @@
 import React from "react";
+import Intro from "../components/templates/Intro";
 
 
 const Presentation = () => {
 
   return (
-    <div>
-      test
-    </div>
-  )
-}
+    <Intro foo={12}/>
+  );
+};
 
 export default Presentation;
