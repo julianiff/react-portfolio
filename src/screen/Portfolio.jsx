@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { portfolioReducer } from "../hooks/portfolioReducer";
 import { portfolioData } from "../data/initialPortfolio";
 import { HoverTriangle } from "../components/HoverTriangle";
-import Turning from "../hoc/Turning";
+import Turning from "../components/Turning";
 import { GlobalStyles } from "../styles/global";
 import DescriptionBox from "../components/DescriptionBox";
 

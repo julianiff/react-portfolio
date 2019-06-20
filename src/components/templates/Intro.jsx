@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import styled from "styled-components";
+import Hovering from "../../hoc/Hovering";
 
 
 type introTemplate = {
@@ -37,8 +38,10 @@ const SubTitle = styled.h2`
 
 const ImgLeft = styled.img`
   width: 25vw;
-  min-width: 150px;
-  padding: 3rem;
+  min-width: 170px;
+  padding: 1rem;
+  margin: 2rem;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 `;
 
 const SideBySide = styled.div`
@@ -52,10 +55,10 @@ const Intro = (data: introTemplate) => {
   const { img, title, subtitle } = data.content;
   return (
     <AllCenter>
-      {img ? <ImgLeft src={img} alt=""/> : ""}
+      {img && <Hovering><ImgLeft src={img} alt=""/> </Hovering>}
       <SideBySide>
-        {title ? <Title>{title}</Title> : ""}
-        {subtitle ? <SubTitle>{subtitle}</SubTitle> : ""}
+        {title && <Title>{title}</Title>}
+        {subtitle && <SubTitle>{subtitle}</SubTitle>}
       </SideBySide>
 
     </AllCenter>

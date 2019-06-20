@@ -11,14 +11,15 @@ const ZIndexHover = styled(animated.div)`
 const Hovering = entry => {
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
-    config: { mass: 5, tension: 550, friction: 115 }
+    config: { mass: 5, tension: 100, friction: 115 }
   }));
 
   const calc = (x, y) => [
-    -(y - window.innerHeight / 2) / 20,
-    (x - window.innerWidth / 2) / 20,
+    -(y - window.innerHeight / 4) / 20,
+    (x - window.innerWidth / 4) / 20,
     0.9
   ];
+
 
   const trans = (x, y, s) =>
     `perspective(400px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;

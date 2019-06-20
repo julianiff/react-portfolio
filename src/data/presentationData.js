@@ -5,6 +5,7 @@
  * @type {{}}
  */
 import React from "react";
+import julian1 from "../img/julian1.jpeg";
 
 export const presentationData = {
   intro: {
@@ -13,7 +14,8 @@ export const presentationData = {
     content: {
       template: "Intro",
       title: <>Hey, <span style={{ color: "#00559d" }}>Digitec</span></>,
-      subtitle: "Ich bin Julian"
+      subtitle: "Ich bin Julian",
+      img: julian1
     }
   },
   me: {
