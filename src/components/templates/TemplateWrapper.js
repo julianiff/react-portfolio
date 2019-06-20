@@ -3,7 +3,7 @@
 import React from "react";
 import Intro from "./Intro.jsx";
 import Navigation from "./Navigation";
-import { Portfolio } from "../../screen/Portfolio";
+import { Portfolio } from "./Portfolio";
 
 export type ListObject = {
   previous: String,

@@ -1,11 +1,11 @@
 import React, { useReducer } from "react";
 import styled from "styled-components";
-import { portfolioReducer } from "../hooks/portfolioReducer";
-import { portfolioData } from "../data/initialPortfolio";
-import { HoverTriangle } from "../components/HoverTriangle";
-import Turning from "../components/Turning";
-import { GlobalStyles } from "../styles/global";
-import DescriptionBox from "../components/DescriptionBox";
+import { portfolioReducer } from "../../hooks/portfolioReducer";
+import { portfolioData } from "../../data/initialPortfolio";
+import { HoverTriangle } from "../HoverTriangle";
+import Turning from "../Turning";
+import { GlobalStyles } from "../../styles/global";
+import DescriptionBox from "../DescriptionBox";
 
 const PortfolioContainer = styled.div`
   display: flex;
