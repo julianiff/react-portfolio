@@ -17,11 +17,17 @@ const templates = {
   Portfolio: Portfolio
 };
 
+const addNavgiation = (TemplateComponent: any) => {
+  return (props: any) => <Navigation {...props}>{TemplateComponent}</Navigation>;
+};
+
 const TemplateWrapper = (current: ListObject) => {
   const { template } = current.content;
   const SpecificTemplate = templates[template];
+  const Nav = addNavgiation(<SpecificTemplate {...current}/>);
 
-  return <Navigation {...current}><SpecificTemplate {...current}/></Navigation> ;
+  return <Nav {...current}/>;
 };
+
 
 export default TemplateWrapper;

@@ -5,9 +5,7 @@ import { portfolioData } from "../data/initialPortfolio";
 import { HoverTriangle } from "../components/HoverTriangle";
 import Turning from "../hoc/Turning";
 import { GlobalStyles } from "../styles/global";
-import Footer from "../components/Footer";
 import DescriptionBox from "../components/DescriptionBox";
-import ImageBox from "../components/ImageBox";
 
 const PortfolioContainer = styled.div`
   display: flex;
@@ -82,9 +80,7 @@ export const Portfolio = () => {
         }
       </PortfolioContainer>
       <Titlebox>{(state.active) ? category[state.active - 1].title : ""}</Titlebox>
-      <ImageBox />
       <DescriptionBox>{(state.active) ? category[state.active - 1].content : ""}</DescriptionBox>
-      <Footer />
     </Bg>
 
   );
