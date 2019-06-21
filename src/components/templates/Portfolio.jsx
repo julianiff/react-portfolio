@@ -6,6 +6,7 @@ import { HoverBox } from "../HoverTriangle";
 import Turning from "../Turning";
 import { GlobalStyles } from "../../styles/global";
 import DescriptionBox from "../DescriptionBox";
+import TitleBox from "../TitleBox";
 
 const PortfolioContainer = styled.div`
   display: flex;
@@ -28,17 +29,6 @@ const Bg = styled.div`
   padding: 3.5rem;
 `;
 
-const Titlebox = styled.div`
-  right: 5vw;
-  color: ${GlobalStyles.color.colorPalette.prim};
-  padding: 1rem;
-  background-color: ${GlobalStyles.color.colorPalette.quint}30;
-  border: solid 5px ${GlobalStyles.color.colorPalette.prim}30;
-  bottom: 100px;
-  z-index: 100;
-  font-size: ${GlobalStyles.font.from14To30}
-  align-self: flex-start;
-`;
 
 const BackgroundReckRight = styled.div`
   width: 550px;
@@ -74,7 +64,7 @@ export const Portfolio = () => {
   return (
     <Bg>
 
-      <Titlebox>{(state.active) ? category[state.active - 1].title : ""}</Titlebox>
+      <TitleBox>{(state.active) ? category[state.active - 1].title : ""}</TitleBox>
       <DescriptionBox>{(state.active) ? category[state.active - 1].content : ""}</DescriptionBox>
 
       <PortfolioContainer>

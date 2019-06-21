@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import { GlobalStyles } from "../styles/global";
+import { device, GlobalStyles } from "../styles/global";
 
 
 const ContentBox = styled.div`
+ @media ${device.tablet} {  
+    padding: 2rem;
+  }
+  
   color: ${GlobalStyles.color.colorPalette.prim};
   border: solid 5px ${GlobalStyles.color.colorPalette.prim};
   max-width: 550px;
   background-color: ${GlobalStyles.color.colorPalette.quint};
-  padding: 1.5rem;
+  padding: 1rem;
   
   font-size: ${GlobalStyles.font.from14to20};
   hyphens: auto;
@@ -16,6 +20,8 @@ const ContentBox = styled.div`
   text-align: left;
   z-index: 100;
   align-self: flex-end;
+  
+
 `;
 
 const DescriptionBox = (props) => {
