@@ -69,7 +69,12 @@ const Intro = (data: introTemplate) => {
   return (
     <AllCenter>
       {img &&
-      <Hovering><PaperBox><ImgLeft src={img.src} alt=""/><ImageLabel>{img.label}</ImageLabel></PaperBox></Hovering>}
+      <Hovering>
+        <PaperBox>
+          <ImgLeft src={img.src} alt=""/>
+          <ImageLabel>{img.label}</ImageLabel>
+        </PaperBox>
+      </Hovering>}
       <SideBySide>
         {title && <Title>{title}</Title>}
         {subtitle && <SubTitle>{subtitle}</SubTitle>}

@@ -10,7 +10,7 @@ export const GlobalStyles = {
   },
   image: {
     width: {
-      fluid45to50: "calc(256px + (300 - 14) * ((100vw - 300px) / (1600 - 300)));",
+      fluid45to50: "calc(200px + (250 - 14) * ((100vw - 300px) / (1600 - 300)));",
       fluid25to50: "calc(25vw + (50 - 14) * ((100vw - 300px) / (1600 - 300)));"
     }
   },

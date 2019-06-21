@@ -53,24 +53,27 @@ export const Portfolio = () => {
 
   const [state, dispatch] = useReducer(portfolioReducer, portfolioData);
 
-  const createTriangles = (data, dispatch) => {
+  const createSwitch = (data, dispatch) => {
     return data.map((item, index) => (
-      <Turning key={item.id} data={item} dispatch={dispatch}><HoverBox
-        ratio={document.documentElement.clientWidth / data.length}
-        index={index}>{item.content}</HoverBox></Turning>));
+      <Turning key={item.id} data={item} dispatch={dispatch}>
+        <HoverBox
+          ratio={document.documentElement.clientWidth / data.length}
+          index={index}>{item.content}</HoverBox>
+      </Turning>));
   };
 
   const { category } = state;
+
   return (
     <Bg>
 
-      <TitleBox>{(state.active) ? category[state.active - 1].title : ""}</TitleBox>
-      <DescriptionBox>{(state.active) ? category[state.active - 1].content : ""}</DescriptionBox>
+      <TitleBox>{(state.active) && category[state.active - 1].title}</TitleBox>
+      <DescriptionBox>{(state.active) && category[state.active - 1].content}</DescriptionBox>
 
       <PortfolioContainer>
         <BackgroundReckRight active={state.active}/>
         <BackgroundReckLeft/>
-        {createTriangles(category, dispatch)}
+        {createSwitch(category, dispatch)}
       </PortfolioContainer>
 
     </Bg>

@@ -3,7 +3,7 @@ export const SET_TO_LEFT = "SET_TO_LEFT";
 export const SET_TEXT_BOX = "SET_TEXT_BOX";
 
 const setFocusElement = (item, state) => {
-  const newState = state.category.filter(entry => entry.id !== item.id);
+  const newState = state.category.map(item => ({ ...item, focus: false })).filter(entry => entry.id !== item.id);
   return [item, ...newState].sort((first, second) => first.id - second.id);
 };
 
