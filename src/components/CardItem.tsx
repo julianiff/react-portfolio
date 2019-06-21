@@ -1,10 +1,10 @@
-// @flow
 import React from "react";
 import { GlobalStyles } from "../styles/global";
+// @ts-ignore
 import styled from "styled-components";
 
 
-type cardData = {
+export type cardData = {
   heading: String,
   body: String,
   img: String

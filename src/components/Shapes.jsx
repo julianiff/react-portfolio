@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 
-const Triangle = styled.div`
+const Shapes = styled.div`
   width: 0; 
   height: 0; 
   border-left: ${props => props.ratio}px solid transparent;
@@ -26,7 +26,7 @@ const Triangle = styled.div`
   }
 `;
 
-const Up = styled(Triangle)`  
+const Up = styled(Shapes)`  
   border-bottom: ${props => props.ratio}px solid ${props => props.color};
   ::after {
     border-bottom: ${props => props.ratio}px solid ${props => props.color}57;
@@ -34,12 +34,27 @@ const Up = styled(Triangle)`
   }
 `;
 
-const Down = styled(Triangle)`
+const Down = styled(Shapes)`
   border-top: ${props => props.ratio}px solid ${props => props.color};
     ::after {
       border-top: ${props => props.ratio}px solid ${props => props.color}57;
       transform: translateY(-${props => props.ratio}px) translateX(-${props => props.ratio}px) scale(1.1);
     }
+`;
+
+const Box = styled.div`
+  width: calc((${props => props.ratio}px ) / 2 );
+  height: 15px;
+  background-color: ${props => props.color};
+  margin: calc((${props => props.ratio}px) / 8 );
+  z-index: 150;
+  border: solid 1px white;
+  box-shadow: 0 0 20px #ffffff1a, 0 0 6px #ffffff1a;
+  transition: box-shadow 250ms ease-in;
+  
+  &:hover {
+    box-shadow: 0 0 28px ${props => props.color}, 0 0 10px ${props => props.color};  
+  }
 `;
 
 const TriangleUp = ({ ratio = 5, color = "black" }) => {
@@ -61,4 +76,7 @@ const TriangleDown = ({ ratio = 5, color = "black" }) => {
     />
   );
 };
-export { TriangleUp, TriangleDown };
+
+const AnimatedBox = ({ ratio = 5, color = "black" }) => (<Box ratio={ratio} color={color}/>);
+
+export { TriangleUp, TriangleDown, AnimatedBox };

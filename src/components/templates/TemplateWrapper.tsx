@@ -1,14 +1,14 @@
 // @flow
 
 import React from "react";
-import Intro from "./Intro.jsx";
+import Intro from "./Intro";
 import Navigation from "./Navigation";
 import { Portfolio } from "./Portfolio";
 
 export type ListObject = {
   previous: String,
   next: String,
-  content: Object,
+  content: any,
   dispatch: Function
 };
 
@@ -18,11 +18,12 @@ const templates = {
 };
 
 const addNavgiation = (TemplateComponent: any) => {
-  return (props: any) => <Navigation {...props}>{TemplateComponent}</Navigation>;
+  return (props: any) => (<Navigation {...props}>{TemplateComponent}</Navigation>);
 };
 
 const TemplateWrapper = (current: ListObject) => {
   const { template } = current.content;
+  // @ts-ignore
   const SpecificTemplate = templates[template];
   const Nav = addNavgiation(<SpecificTemplate {...current}/>);
 
