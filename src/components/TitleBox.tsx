@@ -7,7 +7,7 @@ const TitleBlock = styled.div`
   align-self: flex-start;
   border: solid 5px ${GlobalStyles.color.colorPalette.prim}30;
   color: ${GlobalStyles.color.colorPalette.prim};
-  background-color: ${GlobalStyles.color.colorPalette.quint}60;
+  background-color: ${GlobalStyles.color.colorPalette.quint};
   font-size: ${GlobalStyles.font.from14To30};
   padding: 1rem;
   z-index: 100;
