@@ -66,25 +66,22 @@ export const Portfolio = () => {
   const createSwitch = (data: any, dispatch: any) => {
     return data.map((item: Category, index: number) => (
       <Turning key={item.id} data={item} dispatch={dispatch}>
+        // @ts-ignore
         <HoverBox
           ratio={document.documentElement.clientWidth / data.length}
           index={index}>{item.content}</HoverBox>
       </Turning>));
   };
 
-  return (
-    <Bg>
+  return <Bg>
 
-      <TitleBox>{(state.active) && category.find((item: Category) => item.id === state.active).title}</TitleBox>
-      <DescriptionBox>{(state.active) && category.find((item: Category) => item.id === state.active).content}</DescriptionBox>
+    <TitleBox>{(state.active) && category.find((item: Category) => item.id === state.active).title}</TitleBox>
+    <DescriptionBox>{(state.active) && category.find((item: Category) => item.id === state.active).content}</DescriptionBox>
 
-      <PortfolioContainer>
-        <BackgroundReckRight active={state.active}/>
-        <BackgroundReckLeft/>
-        {createSwitch(category, dispatch)}
-      </PortfolioContainer>
-
-    </Bg>
-
-  );
+    <PortfolioContainer>
+      <BackgroundReckRight active={state.active}/>
+      <BackgroundReckLeft/>
+      {createSwitch(category, dispatch)}
+    </PortfolioContainer>
+  </Bg>;
 };
