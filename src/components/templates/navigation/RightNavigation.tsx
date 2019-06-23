@@ -13,8 +13,12 @@ const RightNavigationStyle = styled(animated.div)`
   z-index: 1500;
 `;
 
+type Navigation = {
+  onClickCallback: any,
+  sign: string
+}
 
-const NavigationElement = ({ onClickCallback, sign }) => {
+const NavigationElement = (nav: Navigation) => {
 
   const [transformation, setTransformation] = useState(true);
   const props = useSpring({
@@ -28,9 +32,9 @@ const NavigationElement = ({ onClickCallback, sign }) => {
       style={props}
       onMouseOver={() => setTransformation(!transformation)}
       onMouseOut={() => setTransformation(!transformation)}
-      onClick={() => onClickCallback()}
+      onClick={() => nav.onClickCallback()}
     >
-      <nav aria-label="Navigation Next" title="Nächste Folie anzeigen" role='navigation'> {sign}</nav>
+      <nav aria-label="Navigation Next" title="Nächste Folie anzeigen" role='navigation'> {nav.sign}</nav>
     </RightNavigationStyle>
   );
 };

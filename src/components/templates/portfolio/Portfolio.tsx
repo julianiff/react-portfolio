@@ -30,13 +30,15 @@ const Bg = styled.div`
   padding: 3.5rem;
 `;
 
-
+interface Active {
+  active: any
+}
 const BackgroundReckRight = styled.div`
   width: 550px;
   height: 550px;
   position: absolute;
   border: 10px solid ${GlobalStyles.color.colorPalette.sec}30;
-  transform: translateX(${(props: any) => (props.active) ? "250px" : ""});
+  transform: translateX(${(props: Active) => (props.active) ? "250px" : ""});
   transition: transform 250ms ease-in;
 `;
 
@@ -63,13 +65,12 @@ export const Portfolio = () => {
 
   useAutomaticCarousel(active, isInAutomatic, delay, category, dispatch);
 
-  const createSwitch = (data: any, dispatch: any) => {
+  const createSwitch = (data: Category[], dispatch: any) => {
     return data.map((item: Category, index: number) => (
       <Turning key={item.id} data={item} dispatch={dispatch}>
-        // @ts-ignore
         <HoverBox
           ratio={document.documentElement.clientWidth / data.length}
-          index={index}>{item.content}</HoverBox>
+          index={index} />
       </Turning>));
   };
 

@@ -24,7 +24,9 @@ const ContentBox = styled.div`
 
 `;
 
-const DescriptionBox = (props) => {
+
+
+const DescriptionBox = (props: any) => {
 
   return (
     <ContentBox>

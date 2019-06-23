@@ -8,7 +8,7 @@ const HoverShapes = ({ index = 1, ratio = 250 }) => {
 
   const goDown = () => {
     return <Hovering>
-      <TriangleDown ratio={ratio} color={colorPicker(index)}>children</TriangleDown>
+      <TriangleDown ratio={ratio} color={colorPicker(index)} />
     </Hovering>;
   };
 
@@ -23,7 +23,7 @@ const HoverShapes = ({ index = 1, ratio = 250 }) => {
   );
 };
 
-const HoverBox = ({ index = 1, ratio = 250 }) => (
+const HoverBox = ({ index = 1, ratio = 250}) => (
   <Hovering><AnimatedBox ratio={ratio} color={colorPicker(index)}/></Hovering>);
 
 export { HoverShapes, HoverBox };

@@ -11,6 +11,7 @@ const DownLeft = styled.div`
   color: ${GlobalStyles.color.colorPalette.prim};
   font-size: 9px;
 `;
+
 const Footer = () => {
   return (
     <DownLeft>
