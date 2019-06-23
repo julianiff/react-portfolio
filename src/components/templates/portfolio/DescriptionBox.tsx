@@ -20,8 +20,6 @@ const ContentBox = styled.div`
   text-align: left;
   z-index: 100;
   align-self: flex-end;
-  
-
 `;
 
 

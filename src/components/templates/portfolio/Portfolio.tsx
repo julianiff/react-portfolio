@@ -8,6 +8,7 @@ import { GlobalStyles } from "../../../utils/global";
 import DescriptionBox from "./DescriptionBox";
 import TitleBox from "./TitleBox";
 import { useAutomaticCarousel } from "../../hooks/useAutomaticCarousel";
+import { Category } from "../../types/Types";
 
 const PortfolioContainer = styled.div`
   display: flex;
@@ -50,13 +51,6 @@ const BackgroundReckLeft = styled.div`
   transform: translateX(-350px) translateY(-150px);
   transition: transaform 250ms ease-in;
 `;
-
-type Category = {
-  id: number,
-  title: string,
-  content: object,
-  focus: boolean
-}
 
 export const Portfolio = () => {
 
