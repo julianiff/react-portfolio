@@ -10,7 +10,6 @@ const setFocusElementFromItem = (item, state) => {
 
 const setFocusFromId = (id, state) => {
   return state.category.map(item => {
-
     if (item.id === id) {
       item.focus = true;
       return item;
@@ -27,10 +26,10 @@ const portfolioReducer = (state, action) => {
     case SET_ELEMENT_FOCUS:
       return {
         ...state,
-        category: setFocusElementFromItem(action.dataset, state)
+        category: setFocusElementFromItem(action.dataset, state),
+        isInAutomatic: false
       };
     case SET_AUTOMATIC_NEXT:
-      // get an id that needs to be set
       return {
         ...state,
         category: setFocusFromId(action.id, state),
@@ -42,14 +41,19 @@ const portfolioReducer = (state, action) => {
         position: "flex-start"
       };
     case SET_TEXT_BOX:
-      let setActive = false;
-      if (state.active !== action.active) {
-        setActive = action.active;
+      if (state.active === action.active) {
+        //hacky,
+        return {
+          ...state,
+          active: false
+        };
+      } else {
+        return {
+          ...state,
+          active: action.active
+        };
       }
-      return {
-        ...state,
-        active: setActive
-      };
+
     default:
       return state;
   }

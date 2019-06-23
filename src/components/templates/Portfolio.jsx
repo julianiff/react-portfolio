@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from "react";
 import styled from "styled-components";
-import { portfolioReducer, SET_AUTOMATIC_NEXT, SET_TEXT_BOX } from "../../hooks/portfolioReducer";
+import { portfolioReducer, SET_AUTOMATIC_NEXT } from "../../hooks/portfolioReducer";
 import { portfolioData } from "../../data/initialPortfolio";
 import { HoverBox } from "../HoverTriangle";
 import Turning from "../Turning";
@@ -62,31 +62,30 @@ export const Portfolio = () => {
       </Turning>));
   };
 
-  const isInAutomatic = true;
 
-  const setCurrentIndex = (id) => {
-    dispatch({ type: SET_AUTOMATIC_NEXT, id });
-    dispatch({ type: SET_TEXT_BOX, id });
+  const setCurrentIndex = (lastId) => {
+    const nextId = (lastId !== state.category.length) ? lastId + 1 : 1;
+    dispatch({ type: SET_AUTOMATIC_NEXT, id: nextId });
   };
 
-  const activefoil = 1;
-  console.log((activefoil + 1) % state.category.length)
+  const { active, isInAutomatic } = state
+
   useEffect(() => {
     if (isInAutomatic) {
-      let timeout = setTimeout(() => {
-        setCurrentIndex((activefoil + 1) % state.category.length);
-      }, 500);
-      return () => clearTimeout(timeout)
+      let roundTime = setTimeout(() => {
+        setCurrentIndex(active );
+      }, 1500);
+      return () => clearTimeout(roundTime)
     }
-  }, [activefoil, isInAutomatic]);
-
+  }, [active, isInAutomatic]);
 
   const { category } = state;
+
   return (
     <Bg>
 
-      <TitleBox>{(state.active) && category[state.active - 1].title}</TitleBox>
-      <DescriptionBox>{(state.active) && category[state.active - 1].content}</DescriptionBox>
+      <TitleBox>{(state.active) && category.find(item => item.id === state.active).title}</TitleBox>
+      <DescriptionBox>{(state.active) && category.find(item => item.id === state.active).content}</DescriptionBox>
 
       <PortfolioContainer>
         <BackgroundReckRight active={state.active}/>
