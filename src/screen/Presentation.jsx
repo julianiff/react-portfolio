@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { presentationData, presentationState } from "../data/presentationData";
+import { presentationFlowData, presentationState } from "../data/presentationFlowData";
 import TemplateWrapper from "../components/templates/TemplateWrapper";
 import { PresentationReducer } from "../hooks/PresentationReducer";
 
@@ -8,7 +8,7 @@ const Presentation = () => {
 
   const [state, dispatch] = useReducer(PresentationReducer, presentationState);
 
-  const current = presentationData[state.current];
+  const current = presentationFlowData[state.current];
 
   return (
     <TemplateWrapper

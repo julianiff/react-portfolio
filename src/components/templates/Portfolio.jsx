@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import styled from "styled-components";
 import { portfolioReducer } from "../../hooks/portfolioReducer";
-import { portfolioData } from "../../data/portfolioData";
+import { portfolioFlowData } from "../../data/portfolioFlowData";
 import { HoverBox } from "../HoverTriangle";
 import Turning from "../Turning";
 import { GlobalStyles } from "../../styles/global";
@@ -52,7 +52,7 @@ const BackgroundReckLeft = styled.div`
 
 export const Portfolio = () => {
 
-  const [state, dispatch] = useReducer(portfolioReducer, portfolioData);
+  const [state, dispatch] = useReducer(portfolioReducer, portfolioFlowData);
   const { active, isInAutomatic, delay, category } = state;
 
   useAutomaticCarousel(active, isInAutomatic, delay, category, dispatch);
