@@ -68,7 +68,7 @@ export const Portfolio = () => {
     dispatch({ type: SET_AUTOMATIC_NEXT, id: nextId });
   };
 
-  const { active, isInAutomatic } = state
+  const { active, isInAutomatic, delay } = state
 
   useEffect(() => {
     if (isInAutomatic) {
@@ -77,7 +77,7 @@ export const Portfolio = () => {
       }, 1500);
       return () => clearTimeout(roundTime)
     }
-  }, [active, isInAutomatic]);
+  }, [active, isInAutomatic, delay]);
 
   const { category } = state;
 
