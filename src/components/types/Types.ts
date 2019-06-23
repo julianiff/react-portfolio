@@ -11,4 +11,5 @@ export interface PortfolioState {
   active: any,
   isInAutomatic: boolean,
   category: Category[],
+  delay: number
 }

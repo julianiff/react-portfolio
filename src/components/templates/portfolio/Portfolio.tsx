@@ -34,6 +34,7 @@ const Bg = styled.div`
 interface Active {
   active: any
 }
+
 const BackgroundReckRight = styled.div`
   width: 550px;
   height: 550px;
@@ -64,14 +65,16 @@ export const Portfolio = () => {
       <Turning key={item.id} data={item} dispatch={dispatch}>
         <HoverBox
           ratio={document.documentElement.clientWidth / data.length}
-          index={index} />
+          index={index}/>
       </Turning>));
   };
 
+  const item = category.find((item: Category) => item.id === state.active) || { title: "", content: "" };
+
   return <Bg>
 
-    <TitleBox>{(state.active) && category.find((item: Category) => item.id === state.active).title}</TitleBox>
-    <DescriptionBox>{(state.active) && category.find((item: Category) => item.id === state.active).content}</DescriptionBox>
+    <TitleBox>{state.active && item.title}</TitleBox>
+    <DescriptionBox>{state.active && item.content}</DescriptionBox>
 
     <PortfolioContainer>
       <BackgroundReckRight active={state.active}/>
