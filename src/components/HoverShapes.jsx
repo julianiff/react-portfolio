@@ -1,10 +1,10 @@
-import Hovering from "../hoc/Hovering";
+import Hovering from "./anmiations/Hovering";
 import { AnimatedBox, TriangleDown, TriangleUp } from "./Shapes";
 import React from "react";
-import { colorPicker } from "../styles/colorPicker";
+import { colorPicker } from "../utils/colorPicker";
 
 
-const HoverTriangle = ({ index = 1, ratio = 250 }) => {
+const HoverShapes = ({ index = 1, ratio = 250 }) => {
 
   const goDown = () => {
     return <Hovering>
@@ -26,4 +26,4 @@ const HoverTriangle = ({ index = 1, ratio = 250 }) => {
 const HoverBox = ({ index = 1, ratio = 250 }) => (
   <Hovering><AnimatedBox ratio={ratio} color={colorPicker(index)}/></Hovering>);
 
-export { HoverTriangle, HoverBox };
+export { HoverShapes, HoverBox };

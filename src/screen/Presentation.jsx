@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import { presentationFlowData, presentationState } from "../data/presentationFlowData";
 import TemplateWrapper from "../components/templates/TemplateWrapper";
-import { PresentationReducer } from "../hooks/PresentationReducer";
+import { PresentationReducer } from "../components/hooks/PresentationReducer";
 
 
 const Presentation = () => {

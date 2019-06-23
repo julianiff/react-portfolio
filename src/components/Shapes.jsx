@@ -57,26 +57,8 @@ const Box = styled.div`
   }
 `;
 
-const TriangleUp = ({ ratio = 5, color = "black" }) => {
-
-  return (
-    <Up
-      ratio={ratio}
-      color={color}
-    />
-  );
-};
-
-const TriangleDown = ({ ratio = 5, color = "black" }) => {
-
-  return (
-    <Down
-      ratio={ratio}
-      color={color}
-    />
-  );
-};
-
+const TriangleUp = ({ ratio = 5, color = "black" }) => (<Up ratio={ratio} color={color}/>);
+const TriangleDown = ({ ratio = 5, color = "black" }) => (<Down ratio={ratio} color={color}/>);
 const AnimatedBox = ({ ratio = 5, color = "black" }) => (<Box ratio={ratio} color={color}/>);
 
 export { TriangleUp, TriangleDown, AnimatedBox };

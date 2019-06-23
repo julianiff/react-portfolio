@@ -1,8 +1,8 @@
 import * as React from "react";
 // @ts-ignore
 import styled from "styled-components";
-import Hovering from "../../hoc/Hovering";
-import { GlobalStyles } from "../../styles/global";
+import Hovering from "../../anmiations/Hovering";
+import { GlobalStyles } from "../../../utils/global";
 
 
 const AllCenter = styled.div`
@@ -63,7 +63,7 @@ interface introTemplate {
   }
 }
 
-const Intro = (data: introTemplate) => {
+const Default = (data: introTemplate) => {
 
   const { img, title, subtitle } = data.content;
   return (
@@ -84,4 +84,4 @@ const Intro = (data: introTemplate) => {
   );
 };
 
-export default Intro;
+export default Default;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { device, GlobalStyles } from "../styles/global";
+import { device, GlobalStyles } from "../../../utils/global";
 
 
 const ContentBox = styled.div`

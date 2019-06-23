@@ -1,5 +1,5 @@
 import React from "react";
-import { GlobalStyles } from "../styles/global";
+import { GlobalStyles } from "../../utils/global";
 // @ts-ignore
 import styled from "styled-components";
 

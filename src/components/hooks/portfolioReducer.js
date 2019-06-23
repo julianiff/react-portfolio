@@ -1,5 +1,4 @@
 export const SET_ELEMENT_FOCUS = "SET_ELEMENT_FOCUS";
-export const SET_TO_LEFT = "SET_TO_LEFT";
 export const SET_TEXT_BOX = "SET_TEXT_BOX";
 export const SET_AUTOMATIC_NEXT = "SET_AUTOMATIC_NEXT";
 
@@ -34,11 +33,6 @@ const portfolioReducer = (state, action) => {
         ...state,
         category: setFocusFromId(action.id, state),
         active: action.id
-      };
-    case SET_TO_LEFT:
-      return {
-        ...state,
-        position: "flex-start"
       };
     case SET_TEXT_BOX:
       if (state.active === action.active) {

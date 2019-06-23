@@ -1,9 +1,9 @@
 // @flow
 
 import React from "react";
-import Intro from "./Intro";
-import Navigation from "./Navigation";
-import { Portfolio } from "./Portfolio";
+import Default from "./default/Default";
+import Navigation from "./navigation/Navigation";
+import { Portfolio } from "../Portfolio/Portfolio";
 
 export type ListObject = {
   previous: String,
@@ -13,7 +13,7 @@ export type ListObject = {
 };
 
 const templates = {
-  Intro: Intro,
+  Intro: Default,
   Portfolio: Portfolio
 };
 

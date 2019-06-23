@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Hovering from "../hoc/Hovering";
+import Hovering from "../anmiations/Hovering";
 
 
 const Edge = styled.div`

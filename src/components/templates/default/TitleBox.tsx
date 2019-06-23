@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { GlobalStyles } from "../styles/global";
+import { GlobalStyles } from "../../../utils/global";
 
 
 const TitleBlock = styled.div`
