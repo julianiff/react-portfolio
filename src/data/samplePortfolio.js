@@ -11,10 +11,11 @@ export const portfolioData = {
       content: "Some Content, can also be jsx", // For the content pane
       focus: true //if this template is in focus or not
     },
-    {id: 2,
-    title: "more content",
-    content: "more Focus",
-    focus: false
+    {
+      id: 2,
+      title: "more content",
+      content: "more Focus",
+      focus: false
     }
   ]
 };

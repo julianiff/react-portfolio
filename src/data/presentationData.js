@@ -19,7 +19,7 @@ export const presentationData = {
       subtitle: "Ich bin Julian",
       img: {
         src: julian1,
-        label: "Someone looking for their keys"
+        label: "Looking for the perfect job!"
       }
     }
   },
@@ -49,7 +49,7 @@ export const presentationData = {
           style={{ "fontSize": GlobalStyles.font.small }}> C# find ich auch super!</span></>,
       img: {
         src: julian2,
-        label: "Definitly a helping face"
+        label: ""
       }
     }
   },

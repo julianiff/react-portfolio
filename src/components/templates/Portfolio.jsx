@@ -7,7 +7,7 @@ import Turning from "../Turning";
 import { GlobalStyles } from "../../styles/global";
 import DescriptionBox from "../DescriptionBox";
 import TitleBox from "../TitleBox";
-import { useCarousel } from "../../hooks/useCarousel";
+import { useAutomaticCarousel } from "../../hooks/useAutomaticCarousel";
 
 const PortfolioContainer = styled.div`
   display: flex;
@@ -55,7 +55,7 @@ export const Portfolio = () => {
   const [state, dispatch] = useReducer(portfolioReducer, portfolioData);
   const { active, isInAutomatic, delay, category } = state;
 
-  useCarousel(active, isInAutomatic, delay, category, dispatch);
+  useAutomaticCarousel(active, isInAutomatic, delay, category, dispatch);
 
   const createSwitch = (data, dispatch) => {
     return data.map((item, index) => (
