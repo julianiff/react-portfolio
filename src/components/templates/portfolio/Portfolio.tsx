@@ -36,7 +36,7 @@ const BackgroundReckRight = styled.div`
   height: 550px;
   position: absolute;
   border: 10px solid ${GlobalStyles.color.colorPalette.sec}30;
-  transform: translateX(${props => (props.active) ? "250px" : ""});
+  transform: translateX(${(props: any) => (props.active) ? "250px" : ""});
   transition: transform 250ms ease-in;
 `;
 
@@ -49,6 +49,12 @@ const BackgroundReckLeft = styled.div`
   transition: transaform 250ms ease-in;
 `;
 
+type Category = {
+  id: number,
+  title: string,
+  content: object,
+  focus: boolean
+}
 
 export const Portfolio = () => {
 
@@ -57,8 +63,8 @@ export const Portfolio = () => {
 
   useAutomaticCarousel(active, isInAutomatic, delay, category, dispatch);
 
-  const createSwitch = (data, dispatch) => {
-    return data.map((item, index) => (
+  const createSwitch = (data: any, dispatch: any) => {
+    return data.map((item: Category, index: number) => (
       <Turning key={item.id} data={item} dispatch={dispatch}>
         <HoverBox
           ratio={document.documentElement.clientWidth / data.length}
@@ -69,8 +75,8 @@ export const Portfolio = () => {
   return (
     <Bg>
 
-      <TitleBox>{(state.active) && category.find(item => item.id === state.active).title}</TitleBox>
-      <DescriptionBox>{(state.active) && category.find(item => item.id === state.active).content}</DescriptionBox>
+      <TitleBox>{(state.active) && category.find((item: Category) => item.id === state.active).title}</TitleBox>
+      <DescriptionBox>{(state.active) && category.find((item: Category) => item.id === state.active).content}</DescriptionBox>
 
       <PortfolioContainer>
         <BackgroundReckRight active={state.active}/>
