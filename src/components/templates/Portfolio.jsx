@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import styled from "styled-components";
 import { portfolioReducer } from "../../hooks/portfolioReducer";
-import { portfolioData } from "../../data/initialPortfolio";
+import { portfolioData } from "../../data/portfolioData";
 import { HoverBox } from "../HoverTriangle";
 import Turning from "../Turning";
 import { GlobalStyles } from "../../styles/global";
