@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/data
+src/data
 /public
 /.pnp
 .pnp.js
@@ -24,21 +24,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-portfolioFlowData.js
-presentationFlowData.js
 src/react-app-env.d.ts
-src/data/img/analytics.png
-src/data/img/angular.svg
-src/data/img/d3.png
-src/data/img/julian1.jpeg
-src/data/img/julian2.jpg
-src/data/img/julian3.jpeg
-src/data/img/laravel.svg
-src/data/img/mysql.png
-src/data/img/rootsindigo.png
-src/data/img/CSS.png
-src/data/img/js.svg
-src/data/img/Node.svg
-src/data/img/php.png
-src/data/img/python.svg
-src/data/img/react.svg
+
