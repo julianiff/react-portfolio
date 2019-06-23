@@ -1,12 +1,13 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useReducer } from "react";
 import styled from "styled-components";
-import { portfolioReducer, SET_AUTOMATIC_NEXT } from "../../hooks/portfolioReducer";
+import { portfolioReducer } from "../../hooks/portfolioReducer";
 import { portfolioData } from "../../data/initialPortfolio";
 import { HoverBox } from "../HoverTriangle";
 import Turning from "../Turning";
 import { GlobalStyles } from "../../styles/global";
 import DescriptionBox from "../DescriptionBox";
 import TitleBox from "../TitleBox";
+import { useCarousel } from "../../hooks/useCarousel";
 
 const PortfolioContainer = styled.div`
   display: flex;
@@ -52,6 +53,9 @@ const BackgroundReckLeft = styled.div`
 export const Portfolio = () => {
 
   const [state, dispatch] = useReducer(portfolioReducer, portfolioData);
+  const { active, isInAutomatic, delay, category } = state;
+
+  useCarousel(active, isInAutomatic, delay, category, dispatch);
 
   const createSwitch = (data, dispatch) => {
     return data.map((item, index) => (
@@ -61,25 +65,6 @@ export const Portfolio = () => {
           index={index}>{item.content}</HoverBox>
       </Turning>));
   };
-
-
-  const setCurrentIndex = (lastId) => {
-    const nextId = (lastId !== state.category.length) ? lastId + 1 : 1;
-    dispatch({ type: SET_AUTOMATIC_NEXT, id: nextId });
-  };
-
-  const { active, isInAutomatic, delay } = state
-
-  useEffect(() => {
-    if (isInAutomatic) {
-      let roundTime = setTimeout(() => {
-        setCurrentIndex(active );
-      }, 1500);
-      return () => clearTimeout(roundTime)
-    }
-  }, [active, isInAutomatic, delay]);
-
-  const { category } = state;
 
   return (
     <Bg>
