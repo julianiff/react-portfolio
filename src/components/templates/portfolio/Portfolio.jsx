@@ -1,13 +1,13 @@
 import React, { useReducer } from "react";
 import styled from "styled-components";
-import { portfolioReducer } from "../hooks/portfolioReducer";
-import { portfolioFlowData } from "../../data/portfolioFlowData";
-import { HoverBox } from "../HoverShapes";
-import Turning from "../anmiations/Turning";
-import { GlobalStyles } from "../../utils/global";
-import DescriptionBox from "../templates/default/DescriptionBox";
-import TitleBox from "../templates/default/TitleBox";
-import { useAutomaticCarousel } from "../hooks/useAutomaticCarousel";
+import { portfolioReducer } from "../../hooks/portfolioReducer";
+import { portfolioFlowData } from "../../../data/portfolioFlowData";
+import { HoverBox } from "../../HoverShapes";
+import Turning from "../../anmiations/Turning";
+import { GlobalStyles } from "../../../utils/global";
+import DescriptionBox from "./DescriptionBox";
+import TitleBox from "./TitleBox";
+import { useAutomaticCarousel } from "../../hooks/useAutomaticCarousel";
 
 const PortfolioContainer = styled.div`
   display: flex;
