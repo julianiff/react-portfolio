@@ -2,6 +2,7 @@ import React from "react";
 import Default from "./default/Default";
 import Navigation from "./navigation/Navigation";
 import { Portfolio } from "./portfolio/Portfolio";
+import Advertisement from "./advertisement/Advertisement";
 
 export type ListObject = {
   previous: String,
@@ -12,7 +13,8 @@ export type ListObject = {
 
 const templates = {
   Default: Default,
-  Portfolio: Portfolio
+  Portfolio: Portfolio,
+  Advertisement: Advertisement
 };
 
 const addNavgiation = (TemplateComponent: any) => {
