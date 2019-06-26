@@ -64,7 +64,7 @@ const Default: FunctionComponent<IntroTemplate> = ({content}) => {
       {img &&
       <Hovering>
         <PaperBox>
-          <ImgLeft src={img.src} alt=""/>
+          <ImgLeft src={img.src} alt={img.label}/>
           <ImageLabel>{img.label}</ImageLabel>
         </PaperBox>
       </Hovering>}
