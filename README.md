@@ -1,10 +1,11 @@
-#####How to start
+### How to start
 
 ```
 $ yarn && yarn start
 $ npm install && npm run start
 ```
 
+### Adjust the Data
 To adjust the visualization, use the properties inputState and inputDataFlow.
 To see the shape of the data see src/dataSample/presentationSampleData.js. It 
 consists of a list of named objects that are structured as a double linked list. 
