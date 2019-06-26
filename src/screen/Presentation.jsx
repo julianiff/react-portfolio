@@ -1,14 +1,13 @@
 import React, { useReducer } from "react";
-import { presentationFlowData } from "../data/presentationFlowData";
 import TemplateWrapper from "../components/templates/TemplateWrapper";
 import { PresentationReducer } from "../components/hooks/PresentationReducer";
 
 
-const Presentation = ({inputData}) => {
+const Presentation = ({inputState, inputDataFLow}) => {
 
-  const [state, dispatch] = useReducer(PresentationReducer, inputData);
+  const [state, dispatch] = useReducer(PresentationReducer, inputState);
 
-  const current = presentationFlowData[state.current];
+  const current = inputDataFLow[state.current];
 
   return (
     <TemplateWrapper
