@@ -16,7 +16,6 @@ export type Active = {
   active: any
 }
 
-
 export type Shape = {
   ratio: number,
   color: string
