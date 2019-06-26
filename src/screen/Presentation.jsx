@@ -4,9 +4,9 @@ import TemplateWrapper from "../components/templates/TemplateWrapper";
 import { PresentationReducer } from "../components/hooks/PresentationReducer";
 
 
-const Presentation = ({initialData}) => {
+const Presentation = ({inputData}) => {
 
-  const [state, dispatch] = useReducer(PresentationReducer, initialData);
+  const [state, dispatch] = useReducer(PresentationReducer, inputData);
 
   const current = presentationFlowData[state.current];
 

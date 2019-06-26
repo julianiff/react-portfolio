@@ -5,7 +5,7 @@ import { presentationState } from "./data/presentationFlowData";
 
 function App() {
   return <Presentation
-  initialData={presentationState}
+    inputData={presentationState}
   />;
 }
 
