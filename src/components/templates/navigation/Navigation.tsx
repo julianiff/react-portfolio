@@ -1,17 +1,10 @@
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import { updateEntry } from "../../hooks/PresentationReducer";
 // @ts-ignore
 import styled from "styled-components";
 import { animated, useSpring } from "react-spring";
+import { NavigationElements } from "../../../interfaces/Interfaces";
 
-
-interface NavigationElements {
-  dispatch: Function;
-  previous: String;
-  next: String;
-  updateEl: Function;
-  children: any;
-}
 
 const NavigationElement = styled(animated.div)`
   position: absolute;
@@ -33,7 +26,7 @@ const LeftNavigation = styled(NavigationElement)`
 `;
 
 
-const Navigation = (NavigationElement: NavigationElements) => {
+const Navigation: FunctionComponent<NavigationElements>  = (NavigationElement) => {
 
   const { dispatch, updateEl, next, previous } = NavigationElement;
 

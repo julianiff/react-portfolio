@@ -1,8 +1,10 @@
 import * as React from "react";
+import { FunctionComponent } from "react";
 // @ts-ignore
 import styled from "styled-components";
 import Hovering from "../../anmiations/Hovering";
 import { GlobalStyles } from "../../../utils/global";
+import { IntroTemplate } from "../../../interfaces/Interfaces";
 
 
 const AllCenter = styled.div`
@@ -52,20 +54,11 @@ const PaperBox = styled.div`
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 `;
 
-interface introTemplate {
-  content: {
-    title: string,
-    subtitle: string,
-    img: {
-      src: string,
-      label: string
-    }
-  }
-}
 
-const Default = (data: introTemplate) => {
 
-  const { img, title, subtitle } = data.content;
+const Default: FunctionComponent<IntroTemplate> = ({content}) => {
+
+  const { img, title, subtitle } = content;
   return (
     <AllCenter>
       {img &&

@@ -1,17 +1,8 @@
 import * as React from "react";
+import { FunctionComponent } from "react";
 // @ts-ignore
 import styled from "styled-components";
-
-interface introTemplate {
-  content: {
-    title: string,
-    subtitle: string,
-    img: {
-      src: string,
-      label: string
-    }
-  }
-}
+import { IntroTemplate } from "../../../interfaces/Interfaces";
 
 const BackgroundBlue = styled.div`
   background-color: #00559d;
@@ -27,7 +18,7 @@ const TitleText = styled.div`
   
 `;
 
-const Advertisement = (data: introTemplate) => {
+const Advertisement: FunctionComponent<IntroTemplate> = () => {
 
   return (
     <BackgroundBlue>

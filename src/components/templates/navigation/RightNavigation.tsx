@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import styled from "styled-components";
 import { animated, useSpring } from "react-spring";
 
@@ -18,7 +18,7 @@ type Navigation = {
   sign: string
 }
 
-const NavigationElement = (nav: Navigation) => {
+const NavigationElement: FunctionComponent<Navigation> = ({onClickCallback, sign}) => {
 
   const [transformation, setTransformation] = useState(true);
   const props = useSpring({
@@ -32,9 +32,9 @@ const NavigationElement = (nav: Navigation) => {
       style={props}
       onMouseOver={() => setTransformation(!transformation)}
       onMouseOut={() => setTransformation(!transformation)}
-      onClick={() => nav.onClickCallback()}
+      onClick={() => onClickCallback()}
     >
-      <nav aria-label="Navigation Next" title="Nächste Folie anzeigen" role='navigation'> {nav.sign}</nav>
+      <nav aria-label="Navigation Next" title="Nächste Folie anzeigen" role='navigation'> {sign}</nav>
     </RightNavigationStyle>
   );
 };

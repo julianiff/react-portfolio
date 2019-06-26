@@ -3,11 +3,17 @@ import TemplateWrapper from "../components/templates/TemplateWrapper";
 import { PresentationReducer } from "../components/hooks/PresentationReducer";
 
 
-const Presentation = ({inputState, inputDataFLow}) => {
+type StateFlow = {
+  inputState: {
+    current: string
+  },
+  inputDataFlow: any,
+}
 
-  const [state, dispatch] = useReducer(PresentationReducer, inputState);
+const Presentation = (props: StateFlow) => {
 
-  const current = inputDataFLow[state.current];
+  const [state, dispatch] = useReducer(PresentationReducer, props.inputState);
+  const current = props.inputDataFlow[state.current];
 
   return (
     <TemplateWrapper

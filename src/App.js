@@ -12,7 +12,7 @@ import { presentationSampleFlow, presentationSampleState } from "./dataSample/pr
 function App() {
   return <Presentation
     inputState={(presentationState) ? presentationState : presentationSampleState}
-    inputDataFLow={(presentationFlowData) ? presentationFlowData : presentationSampleFlow}
+    inputDataFlow={(presentationFlowData) ? presentationFlowData : presentationSampleFlow}
   />;
 }
 

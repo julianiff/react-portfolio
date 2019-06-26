@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import { GlobalStyles } from "../../../utils/global";
 
@@ -18,9 +18,9 @@ type Props = {
   children: string,
 }
 
-const TitleBox = (props: Props) => {
+const TitleBox: FunctionComponent<Props> = ({ children }) => {
 
-  return <TitleBlock>{props.children}</TitleBlock>;
+  return <TitleBlock>{children}</TitleBlock>;
 };
 
 export default TitleBox;

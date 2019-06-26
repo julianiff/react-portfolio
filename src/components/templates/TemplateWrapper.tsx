@@ -3,15 +3,9 @@ import Default from "./default/Default";
 import Navigation from "./navigation/Navigation";
 import { Portfolio } from "./portfolio/Portfolio";
 import Advertisement from "./advertisement/Advertisement";
+import { ListObject } from "../../interfaces/Interfaces";
 
-export type ListObject = {
-  previous: String,
-  next: String,
-  content: any,
-  dispatch: Function
-};
-
-const templates = {
+const templates: any = {
   Default: Default,
   Portfolio: Portfolio,
   Advertisement: Advertisement
@@ -23,7 +17,7 @@ const addNavgiation = (TemplateComponent: any) => {
 
 const TemplateWrapper = (current: ListObject) => {
   const { template } = current.content;
-  // @ts-ignore
+
   const SpecificTemplate = templates[template];
   const NavTemplate = addNavgiation(<SpecificTemplate {...current}/>);
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import { device, GlobalStyles } from "../../../utils/global";
 
@@ -22,13 +22,14 @@ const ContentBox = styled.div`
   align-self: flex-end;
 `;
 
+type Description = {
+}
 
-
-const DescriptionBox = (props: any) => {
+const DescriptionBox: FunctionComponent<Description> = ({children}) => {
 
   return (
     <ContentBox>
-      {props.children}
+      {children}
     </ContentBox>
   );
 

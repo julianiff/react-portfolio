@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { FunctionComponent, useReducer } from "react";
 import styled from "styled-components";
 import { portfolioReducer } from "../../hooks/portfolioReducer";
 import { HoverBox } from "../../HoverShapes";
@@ -7,7 +7,8 @@ import { GlobalStyles } from "../../../utils/global";
 import DescriptionBox from "./DescriptionBox";
 import TitleBox from "./TitleBox";
 import { useAutomaticCarousel } from "../../hooks/useAutomaticCarousel";
-import { Category } from "../../types/Types";
+import { Active, Category } from "../../../interfaces/Types";
+import { PortfolioData } from "../../../interfaces/Interfaces";
 
 const PortfolioContainer = styled.div`
   display: flex;
@@ -30,9 +31,7 @@ const Bg = styled.div`
   padding: 3.5rem;
 `;
 
-type Active = {
-  active: any
-}
+
 
 const BackgroundReckRight = styled.div`
   width: 550px;
@@ -52,24 +51,10 @@ const BackgroundReckLeft = styled.div`
   transition: transaform 250ms ease-in;
 `;
 
-type PortfolioShape = {
-  active: number, // Pointer to the active foil id
-  isInAutomatic: boolean, // If the carusell is automatically going to the next foil
-  delay: number, // delay after each foil
-  category: Category[],
-}
 
-interface PortfolioData {
-  content: {
-    template: string
-    data: PortfolioShape
-  }
-}
+export const Portfolio: FunctionComponent<PortfolioData> = ({ content }) => {
 
-
-export const Portfolio = (props: PortfolioData) => {
-
-  const [state, dispatch] = useReducer(portfolioReducer, props.content.data);
+  const [state, dispatch] = useReducer(portfolioReducer, content.data);
   const { active, isInAutomatic, delay, category } = state;
 
   useAutomaticCarousel(active, isInAutomatic, delay, category, dispatch);

@@ -1,4 +1,5 @@
-import { Category, PortfolioState } from "../types/Types";
+import { Category } from "../../interfaces/Types";
+import { PortfolioState } from "../../interfaces/Interfaces";
 
 export const SET_ELEMENT_FOCUS = "SET_ELEMENT_FOCUS";
 export const SET_TEXT_BOX = "SET_TEXT_BOX";
