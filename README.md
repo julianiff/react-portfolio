@@ -1,6 +1,5 @@
-###### Portfolio Project, 
+###How to start
 
-#How to start
 ```
 $ yarn && yarn start
 $ npm install && npm run start
@@ -25,6 +24,13 @@ intro: {
     }
   },
 ```
-This list can be enriched with jsx to give more flexebility with the content generateion. 
+This list can be enriched with jsx to give more flexibility with the content generation.
+
+There exist 2 templates. 
+1) Default, that has a title, subtitle and img with src and label.
+2) Portfolio with a datastructure that can be found in src/dataSample/samplePortfolio.js
+
+ 
+
 
 
