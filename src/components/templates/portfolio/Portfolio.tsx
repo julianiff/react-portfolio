@@ -30,7 +30,7 @@ const Bg = styled.div`
   padding: 3.5rem;
 `;
 
-interface Active {
+type Active = {
   active: any
 }
 
