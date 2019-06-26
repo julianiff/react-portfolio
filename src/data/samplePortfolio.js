@@ -1,7 +1,7 @@
 import React from "react";
 
 export const portfolioData = {
-  active: 1, // Pointer to the active foild id
+  active: 1, // Pointer to the active foil id
   isInAutomatic: true, // If the carusell is automatically going to the next foil
   delay: 1500, // delay after each foil
   category: [

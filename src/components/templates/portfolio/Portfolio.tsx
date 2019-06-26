@@ -1,7 +1,6 @@
 import React, { useReducer } from "react";
 import styled from "styled-components";
 import { portfolioReducer } from "../../hooks/portfolioReducer";
-import { portfolioFlowData } from "../../../data/portfolioFlowData";
 import { HoverBox } from "../../HoverShapes";
 import Turning from "../../anmiations/Turning";
 import { GlobalStyles } from "../../../utils/global";
@@ -53,9 +52,24 @@ const BackgroundReckLeft = styled.div`
   transition: transaform 250ms ease-in;
 `;
 
-export const Portfolio = () => {
+type PortfolioShape = {
+  active: number, // Pointer to the active foil id
+  isInAutomatic: boolean, // If the carusell is automatically going to the next foil
+  delay: number, // delay after each foil
+  category: Category[],
+}
 
-  const [state, dispatch] = useReducer(portfolioReducer, portfolioFlowData);
+interface PortfolioData {
+  content: {
+    template: string
+    data: PortfolioShape
+  }
+}
+
+
+export const Portfolio = (props: PortfolioData) => {
+
+  const [state, dispatch] = useReducer(portfolioReducer, props.content.data);
   const { active, isInAutomatic, delay, category } = state;
 
   useAutomaticCarousel(active, isInAutomatic, delay, category, dispatch);

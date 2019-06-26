@@ -25,9 +25,9 @@ const TemplateWrapper = (current: ListObject) => {
   const { template } = current.content;
   // @ts-ignore
   const SpecificTemplate = templates[template];
-  const Nav = addNavgiation(<SpecificTemplate {...current}/>);
+  const NavTemplate = addNavgiation(<SpecificTemplate {...current}/>);
 
-  return <Nav {...current}/>;
+  return <NavTemplate {...current}/>;
 };
 
 
