@@ -5,6 +5,7 @@ import { SET_ELEMENT_FOCUS, SET_TEXT_BOX } from "../hooks/portfolioReducer";
 
 const Flippering = styled(animated.div)`
   will-change: transform, opacity;
+  cursor: pointer;
 `;
 
 const Turning = entry => {

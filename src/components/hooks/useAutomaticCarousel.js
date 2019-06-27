@@ -11,7 +11,7 @@ export const useAutomaticCarousel = (active, isInAutomatic, delay, category, dis
     if (isInAutomatic) {
       let roundTime = setTimeout(() => {
         setCurrentIndex(active);
-      }, 1500);
+      }, delay);
       return () => clearTimeout(roundTime);
     }
   }, [active, isInAutomatic, delay, category, dispatch, type]);
