@@ -51,7 +51,6 @@ const portfolioReducer = (state: PortfolioState, action: any): PortfolioState =>
           active: action.active
         };
       }
-
     default:
       return state;
   }

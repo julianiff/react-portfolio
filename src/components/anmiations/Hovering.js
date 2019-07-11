@@ -15,8 +15,8 @@ const Hovering = entry => {
   }));
 
   const calc = (x, y) => [
-    -(y - window.innerHeight / 4) / 20,
-    (x - window.innerWidth / 4) / 20,
+    -(y - window.innerHeight / 2) / 20,
+    (x - window.innerWidth / 2) / 20,
     0.9
   ];
 

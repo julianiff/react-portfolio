@@ -1,5 +1,5 @@
 {
-  "name": "homepage",
+  "name": "porfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,8 +8,6 @@
     "@types/react": "^16.8.21",
     "@types/react-dom": "^16.8.4",
     "@types/styled-components": "^4.1.16",
-    "lodash-es": "^4.17.11",
-    "lodash-move": "^1.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
